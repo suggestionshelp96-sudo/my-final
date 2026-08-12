@@ -1,0 +1,36 @@
+.gradle/
+build/
+app/build/
+local.properties
+*.jks
+*.keystore
+*** Add File: FitFlow/README.md
+# FitFlow Android
+
+Native Kotlin and Jetpack Compose application for Android 10+.
+
+## Open and build
+
+1. Open this `FitFlow` folder in Android Studio (Ladybug or later).
+2. Set the Android SDK location in `local.properties` when Android Studio prompts.
+3. Replace `app/src/main/res/drawable/fitflow_logo.xml` with the supplied official Blue Running-Man image before release. Keep the exact file name.
+4. Sync Gradle and run on an Android 10+ device.
+5. Create an APK: `Build > Build APK(s)`.
+6. Create a Play Store AAB: `Build > Generate Signed Bundle / APK > Android App Bundle` and select a release keystore.
+
+## Play Store release
+
+- Set the production AdMob app ID and ad units in `AndroidManifest.xml` and `AdConfig.kt`.
+- Publish a hosted privacy-policy URL and update `AppLinks.PRIVACY_URL`.
+- Prepare screenshots, feature graphic, and listing copy in `play-store-assets/`.
+- Increment `versionCode` and `versionName` in `app/build.gradle.kts` for every upload.
+
+## GitHub
+
+Create an empty GitHub repository, then from this directory run:
+
+```bash
+git add FitFlow
+git commit -m "Add FitFlow native Android application"
+git push -u origin main
+```
