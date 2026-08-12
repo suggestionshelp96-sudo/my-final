@@ -27,6 +27,9 @@ jobs:
           java-version: '17'
           cache: gradle
 
+      - name: Regenerate Gradle Wrapper
+        run: gradle wrapper
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
@@ -58,6 +61,9 @@ jobs:
           distribution: temurin
           java-version: '17'
           cache: gradle
+
+      - name: Regenerate Gradle Wrapper
+        run: gradle wrapper
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
