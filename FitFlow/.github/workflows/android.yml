@@ -13,6 +13,9 @@ jobs:
   debug-apk:
     name: Build Debug APK
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: FitFlow
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -31,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: FitFlow-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: FitFlow/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 30
 
@@ -39,6 +42,9 @@ jobs:
     name: Build Release AAB
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: FitFlow
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -57,6 +63,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: FitFlow-release-aab-unsigned
-          path: app/build/outputs/bundle/release/app-release.aab
+          path: FitFlow/app/build/outputs/bundle/release/app-release.aab
           if-no-files-found: error
           retention-days: 30
